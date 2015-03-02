@@ -9,7 +9,9 @@ def putDate(path, verb):
     with open(path, 'a') as f:
         f.write(d.strftime("%Y-%m-%d") + "\t" + t.strftime("%H:%M:%S") + "\t" + verb)
         f.write("\n")
-    print(d.strftime("%Y-%m-%d") + "\t" + t.strftime("%H:%M:%S") + "\t" + verb)
+#    print(d.strftime("%Y-%m-%d") + "\t" + t.strftime("%H:%M:%S") + "\t" + verb)
+    if verb == "start":
+        print "You can do this!"
 
 def calcTimeWorked(path):
     with open(path, "r") as f:
@@ -41,7 +43,7 @@ def smallReport(path):
             elif verb == "start":
                 delta = delta + stop - dt
 
-    print "Time studied today: " + str(delta)
+    print "Break deserved, you studied: " + str(delta)
 
 def main(argv):
     try:
